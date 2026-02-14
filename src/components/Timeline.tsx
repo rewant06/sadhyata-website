@@ -32,12 +32,12 @@ const Timeline = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <span className="text-gold text-sm tracking-[0.3em] uppercase font-medium">
             Our Journey
           </span>
-          <h2 className="text-3xl md:text-4xl font-serif font-semibold text-navy mt-3 mb-4">
+          <h2 className="text-2xl font-serif font-semibold text-navy mt-3 mb-4 sm:text-3xl md:text-4xl">
             Milestones of Growth
           </h2>
           <div className="gold-divider mx-auto" />
@@ -45,7 +45,7 @@ const Timeline = () => {
 
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gold/20 md:-translate-x-px" />
+          <div className="absolute left-6 top-0 bottom-0 w-px bg-gold/20 md:left-1/2 md:-translate-x-px" />
 
           {milestones.map((m, i) => (
             <motion.div
@@ -54,18 +54,18 @@ const Timeline = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`relative flex items-start mb-12 last:mb-0 ${
+              className={`relative flex items-start mb-10 last:mb-0 md:mb-12 ${
                 i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               }`}
             >
               {/* Dot */}
-              <div className="absolute left-6 md:left-1/2 w-3 h-3 bg-gold rounded-full -translate-x-1.5 mt-2 z-10" />
+              <div className="absolute left-6 w-3 h-3 bg-gold rounded-full -translate-x-1.5 mt-2 z-10 md:left-1/2" />
 
               {/* Content */}
               <div className={`ml-14 md:ml-0 md:w-1/2 ${i % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16"}`}>
-                <span className="text-gold font-serif text-xl font-bold">{m.year}</span>
-                <h3 className="font-serif font-semibold text-navy text-lg mt-1 mb-2">{m.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{m.desc}</p>
+                <span className="text-gold font-serif text-lg font-bold sm:text-xl">{m.year}</span>
+                <h3 className="font-serif font-semibold text-navy text-base mt-1 mb-2 sm:text-lg">{m.title}</h3>
+                <p className="text-muted-foreground text-xs leading-relaxed sm:text-sm">{m.desc}</p>
               </div>
             </motion.div>
           ))}
