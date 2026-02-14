@@ -2,57 +2,57 @@ import logo from "@/assets/sadhyata-logo.jpeg";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-navy pt-16 pb-8 px-6 md:px-12 lg:px-20">
+    <footer id="contact" className="bg-navy pt-12 pb-6 px-4 md:pt-16 md:pb-8 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-10 mb-12">
+        <div className="grid gap-8 mb-10 sm:grid-cols-2 md:grid-cols-4 md:gap-10 md:mb-12">
           {/* Brand */}
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Sadhyata" className="h-9 rounded" />
+          <div className="sm:col-span-2 md:col-span-1">
+            <div className="flex items-center gap-2.5 mb-4">
+              <img src={logo} alt="Sadhyata" className="h-8 rounded sm:h-9" />
               <div>
-                <span className="text-primary-foreground font-serif text-lg font-semibold tracking-wide">SADHYATA</span>
-                <span className="text-gold-light text-[10px] block tracking-[0.3em] uppercase">Group</span>
+                <span className="text-primary-foreground font-serif text-base font-bold tracking-[0.15em] sm:text-lg">SADHYATA</span>
+                <span className="text-gold text-[9px] block tracking-[0.35em] uppercase sm:text-[10px]">Group</span>
               </div>
             </div>
-            <p className="text-primary-foreground/50 text-sm leading-relaxed">
+            <p className="text-primary-foreground/50 text-xs leading-relaxed sm:text-sm">
               A purpose-driven Indian conglomerate building institutions for India's future.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif font-semibold text-primary-foreground text-sm mb-4">Quick Links</h4>
+            <h4 className="font-serif font-semibold text-primary-foreground text-sm mb-3 md:mb-4">Quick Links</h4>
             {["About", "Leadership", "Our Businesses", "Governance"].map((l) => (
               <a key={l} href={`#${l.toLowerCase().replace(/ /g, "-")}`}
-                className="block text-primary-foreground/50 hover:text-gold text-sm py-1 transition-colors">{l}</a>
+                className="block text-primary-foreground/50 hover:text-gold text-xs py-1 transition-colors sm:text-sm">{l}</a>
             ))}
           </div>
 
           <div>
-            <h4 className="font-serif font-semibold text-primary-foreground text-sm mb-4">Resources</h4>
+            <h4 className="font-serif font-semibold text-primary-foreground text-sm mb-3 md:mb-4">Resources</h4>
             {["Sustainability", "Investors", "Media", "Careers"].map((l) => (
               <a key={l} href={`#${l.toLowerCase()}`}
-                className="block text-primary-foreground/50 hover:text-gold text-sm py-1 transition-colors">{l}</a>
+                className="block text-primary-foreground/50 hover:text-gold text-xs py-1 transition-colors sm:text-sm">{l}</a>
             ))}
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="font-serif font-semibold text-primary-foreground text-sm mb-4">Contact</h4>
-            <p className="text-primary-foreground/50 text-sm leading-relaxed">
+            <h4 className="font-serif font-semibold text-primary-foreground text-sm mb-3 md:mb-4">Contact</h4>
+            <p className="text-primary-foreground/50 text-xs leading-relaxed sm:text-sm">
               Email: ankesh@sadhyata.com
             </p>
-            <p className="text-primary-foreground/50 text-sm mt-1">
+            <p className="text-primary-foreground/50 text-xs mt-1 sm:text-sm">
               Phone: +91 9031017714
             </p>
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-primary-foreground/30 text-xs">
+        <div className="border-t border-primary-foreground/10 pt-4 flex flex-col gap-3 items-center text-center md:flex-row md:justify-between md:pt-6 md:gap-4">
+          <p className="text-primary-foreground/30 text-[11px] sm:text-xs">
             © {new Date().getFullYear()} SADHYATA Private Limited. All rights reserved.
           </p>
-          <p className="text-primary-foreground/30 text-xs">
+          <p className="text-primary-foreground/30 text-[11px] sm:text-xs">
             Building Institutions That Power India's Future
           </p>
         </div>
