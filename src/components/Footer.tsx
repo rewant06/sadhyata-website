@@ -1,18 +1,15 @@
-import logo from "@/assets/sadhyata-logo.jpeg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer id="contact" className="bg-navy pt-12 pb-6 px-4 md:pt-16 md:pb-8 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto">
         <div className="grid gap-8 mb-10 sm:grid-cols-2 md:grid-cols-4 md:gap-10 md:mb-12">
-          {/* Brand */}
+          {/* Brand — text only */}
           <div className="sm:col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
-              <img src={logo} alt="Sadhyata" className="h-8 rounded sm:h-9" />
-              <div>
-                <span className="text-primary-foreground font-serif text-base font-bold tracking-[0.15em] sm:text-lg">SADHYATA</span>
-                <span className="text-gold text-[9px] block tracking-[0.35em] uppercase sm:text-[10px]">Group</span>
-              </div>
+            <div className="mb-4">
+              <span className="text-primary-foreground font-serif text-lg font-bold tracking-[0.18em] sm:text-xl">SADHYATA</span>
+              <span className="text-gold text-[9px] block tracking-[0.4em] uppercase sm:text-[10px]">Group</span>
             </div>
             <p className="text-primary-foreground/50 text-xs leading-relaxed sm:text-sm">
               A purpose-driven Indian conglomerate building institutions for India's future.
@@ -22,16 +19,26 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="font-serif font-semibold text-primary-foreground text-sm mb-3 md:mb-4">Quick Links</h4>
-            {["About", "Leadership", "Our Businesses", "Governance"].map((l) => (
-              <a key={l} href={`#${l.toLowerCase().replace(/ /g, "-")}`}
-                className="block text-primary-foreground/50 hover:text-gold text-xs py-1 transition-colors sm:text-sm">{l}</a>
-            ))}
+            {[
+              { label: "About", href: "/#about" },
+              { label: "Leadership", href: "/#leadership" },
+              { label: "Our Businesses", href: "/#businesses" },
+              { label: "Foundation", href: "/foundation" },
+            ].map((l) =>
+              l.href.startsWith("/") && !l.href.startsWith("/#") ? (
+                <Link key={l.label} to={l.href}
+                  className="block text-primary-foreground/50 hover:text-gold text-xs py-1 transition-colors sm:text-sm">{l.label}</Link>
+              ) : (
+                <a key={l.label} href={l.href}
+                  className="block text-primary-foreground/50 hover:text-gold text-xs py-1 transition-colors sm:text-sm">{l.label}</a>
+              )
+            )}
           </div>
 
           <div>
             <h4 className="font-serif font-semibold text-primary-foreground text-sm mb-3 md:mb-4">Resources</h4>
             {["Sustainability", "Investors", "Media", "Careers"].map((l) => (
-              <a key={l} href={`#${l.toLowerCase()}`}
+              <a key={l} href={`/#${l.toLowerCase()}`}
                 className="block text-primary-foreground/50 hover:text-gold text-xs py-1 transition-colors sm:text-sm">{l}</a>
             ))}
           </div>
