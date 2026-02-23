@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import chairmanImg from "@/assets/chairman-portrait.jpeg";
 
 const ChairmanMessage = () => {
   return (
@@ -11,17 +12,20 @@ const ChairmanMessage = () => {
           transition={{ duration: 0.7 }}
           className="grid gap-8 items-center lg:grid-cols-5 lg:gap-12"
         >
-          {/* Portrait placeholder */}
+          {/* Chairman Portrait */}
           <div className="flex justify-center lg:col-span-2">
-            <div className="w-48 h-60 bg-navy/5 border border-gold/20 flex items-center justify-center sm:w-64 sm:h-80">
-              <div className="text-center px-6">
-                <div className="w-16 h-16 rounded-full bg-navy/10 mx-auto mb-3 flex items-center justify-center sm:w-20 sm:h-20 sm:mb-4">
-                  <span className="font-serif text-navy text-xl font-bold sm:text-2xl">KS</span>
-                </div>
-                <span className="text-navy font-serif font-semibold text-xs sm:text-sm">
+            <div className="relative w-48 sm:w-64 md:w-72">
+              <div className="absolute inset-0 border border-gold/30 translate-x-3 translate-y-3" />
+              <img
+                src={chairmanImg}
+                alt="Shri Karnjeet Kumar Singh – Founder & Group Executive Chairman"
+                className="relative z-10 w-full h-auto object-cover grayscale-[15%]"
+              />
+              <div className="relative z-10 bg-navy px-4 py-3 text-center">
+                <span className="text-primary-foreground font-serif font-semibold text-xs sm:text-sm block">
                   Shri Karnjeet Kumar Singh
                 </span>
-                <span className="block text-muted-foreground text-[11px] mt-1 sm:text-xs">
+                <span className="text-gold text-[10px] sm:text-xs tracking-wider uppercase">
                   Founder & Group Executive Chairman
                 </span>
               </div>
