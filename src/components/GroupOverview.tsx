@@ -22,7 +22,7 @@ const GroupOverview = () => {
             <p className="text-muted-foreground leading-relaxed mb-5 text-sm md:text-base">
               SADHYATA Private Limited is the ultimate holding company of the SADHYATA Group, 
               established to drive vision-led expansion, structured governance, and long-term 
-              value creation across multiple sectors. Incorporated in March 2023, the Group 
+              value creation across multiple sectors. Incorporated in March 2020, the Group 
               operates through a portfolio of specialized subsidiaries.
             </p>
             <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
