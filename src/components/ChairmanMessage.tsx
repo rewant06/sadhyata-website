@@ -15,12 +15,14 @@ const ChairmanMessage = () => {
           {/* Chairman Portrait */}
           <div className="flex justify-center lg:col-span-2">
             <div className="relative w-48 sm:w-64 md:w-72">
-              <div className="absolute inset-0 border border-gold/30 translate-x-3 translate-y-3" />
-              <img
-                src={chairmanImg}
-                alt="Shri Karnjeet Kumar Singh – Founder & Group Executive Chairman"
-                className="relative z-10 w-full aspect-[3/4] object-cover object-top grayscale-[15%]"
-              />
+              <div className="absolute inset-0 border border-gold/30 translate-x-3 translate-y-3 z-0" />
+              <div className="relative z-10 overflow-hidden">
+                <img
+                  src={chairmanImg}
+                  alt="Shri Karnjeet Kumar Singh – Founder & Group Executive Chairman"
+                  className="w-full h-auto block grayscale-[15%]"
+                />
+              </div>
               <div className="relative z-10 bg-navy px-4 py-3 text-center">
                 <span className="text-primary-foreground font-serif font-semibold text-xs sm:text-sm block">
                   Shri Karnjeet Kumar Singh
