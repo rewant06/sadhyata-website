@@ -19,7 +19,7 @@ const ChairmanMessage = () => {
               <img
                 src={chairmanImg}
                 alt="Shri Karnjeet Kumar Singh – Founder & Group Executive Chairman"
-                className="relative z-10 w-full h-auto object-cover grayscale-[15%]"
+                className="relative z-10 w-full aspect-[3/4] object-cover object-top grayscale-[15%]"
               />
               <div className="relative z-10 bg-navy px-4 py-3 text-center">
                 <span className="text-primary-foreground font-serif font-semibold text-xs sm:text-sm block">

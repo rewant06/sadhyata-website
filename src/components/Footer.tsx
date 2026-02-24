@@ -47,10 +47,7 @@ const Footer = () => {
           <div>
             <h4 className="font-serif font-semibold text-primary-foreground text-sm mb-3 md:mb-4">Contact</h4>
             <p className="text-primary-foreground/50 text-xs leading-relaxed sm:text-sm">
-              Email: ankesh@sadhyata.com
-            </p>
-            <p className="text-primary-foreground/50 text-xs mt-1 sm:text-sm">
-              Phone: +91 9031017714
+              Email: info@sadhyata.com
             </p>
           </div>
         </div>

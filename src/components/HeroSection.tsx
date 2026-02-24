@@ -58,7 +58,7 @@ const HeroSection = () => {
           {[
             { value: "13+", label: "Subsidiaries" },
             { value: "10+", label: "Sectors" },
-            { value: "2023", label: "Incorporated" },
+            { value: "2020", label: "Incorporated" },
             { value: "Pan India", label: "Presence" },
           ].map((stat) => (
             <div key={stat.label} className="md:px-8 first:pl-0">
