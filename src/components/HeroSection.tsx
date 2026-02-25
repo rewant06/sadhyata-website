@@ -23,6 +23,9 @@ const HeroSection = () => {
           className="max-w-3xl"
         >
           <div className="gold-divider mb-6 md:mb-8" />
+          <p className="text-gold text-xs tracking-[0.25em] uppercase font-medium mb-3 md:text-sm md:mb-4">
+            First Core Investment Company (CIC) in Jharkhand &amp; Bihar
+          </p>
           <h1 className="text-3xl font-serif font-semibold text-primary-foreground leading-tight mb-4 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl md:mb-6">
             Building Institutions That Power{" "}
             <span className="text-gradient-gold">India's Future</span>
