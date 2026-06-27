@@ -1,68 +1,122 @@
-# Welcome to your Lovable project
+# SADHYATA Group — Corporate Website
 
-## Project info
+Official corporate website for **SADHYATA Private Limited**, a purpose-driven Indian conglomerate operating across infrastructure, energy, mining, finance, technology, agriculture, hospitality, and social development.
 
+---
 
-## How can I edit this code?
+## Stack
 
-There are several ways of editing your application.
+| Layer | Technology |
+|-------|-----------|
+| Framework | React 18 + TypeScript |
+| Build | Vite |
+| Styling | Tailwind CSS + custom design tokens |
+| Components | shadcn/ui (Radix UI primitives) |
+| Animation | Framer Motion |
+| Routing | React Router v6 |
+| Data | TanStack Query |
+| Testing | Vitest + Testing Library |
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## Project Structure
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```
+src/
+├── assets/              # Images processed by Vite (content-hashed at build)
+├── components/          # Shared UI components
+│   └── ui/              # shadcn/ui base components
+├── hooks/               # Custom React hooks
+├── lib/                 # Utilities
+├── pages/               # Route-level components
+│   ├── subsidiaries/    # Individual subsidiary pages (lazy-loaded)
+│   ├── Leadership.tsx
+│   ├── Foundation.tsx
+│   ├── Investors.tsx
+│   ├── Careers.tsx
+│   └── Index.tsx
+└── index.css            # Global styles + Tailwind directives
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## Getting Started
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Requires Node.js 18+.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+git clone https://github.com/rewant06/sadhyata-website.git
+cd sadhyata-website
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Dev server runs on `http://localhost:8080`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## Scripts
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+| Command | What it does |
+|---------|-------------|
+| `npm run dev` | Start dev server with HMR |
+| `npm run build` | Production build → `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm test` | Run tests |
+| `npm run lint` | Lint the codebase |
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## Adding Images
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+All images should go in `src/assets/` with descriptive, lowercase, hyphenated filenames.
 
-## How can I deploy this project?
+```
+src/assets/
+├── hero-bg.jpg
+├── chairman-portrait.jpeg
+├── ankesh-raj-executive-director.jpeg
+├── kajal-chetri-hr-director.jpeg
+└── sandeep-tiwari-general-counsel.jpeg
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Vite processes these at build time — they get content-hashed filenames automatically for optimal caching. Import them directly in components:
 
-## Can I connect a custom domain to my Lovable project?
+```tsx
+import portraitImg from "@/assets/ankesh-raj-executive-director.jpeg";
+```
 
-Yes, you can!
+Do **not** place assets referenced in component code inside `public/`. Use `public/` only for files that need a fixed, static URL (like `robots.txt`, `sitemap.xml`, or favicon).
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Routing
+
+| Path | Page |
+|------|------|
+| `/` | Homepage |
+| `/leadership` | Leadership — Chairman & KMP |
+| `/foundation` | Sadhyata Foundation |
+| `/investors` | Investor Centre |
+| `/careers` | Careers |
+| `/businesses/:slug` | Individual subsidiary pages |
+
+All subsidiary pages are lazy-loaded for performance.
+
+---
+
+## Deployment
+
+```bash
+npm run build
+```
+
+Output goes to `dist/`. Deploy that folder to any static host — Netlify, Vercel, AWS S3 + CloudFront, or similar.
+
+No environment variables are required. This is a fully static frontend.
+
+---
+
+## Contributing
+
+This is a private corporate site. Raise a PR against `main` for any changes. Discuss structural changes with the development team before starting work.
