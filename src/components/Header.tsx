@@ -3,20 +3,20 @@ import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
-  { label: "Home", href: "/#home" },
-  { label: "About", href: "/#about" },
-  { label: "Leadership", href: "/#leadership" },
+  { label: "Home",           href: "/#home" },
+  { label: "About",          href: "/#about" },
+  { label: "Leadership",     href: "/leadership" },
   { label: "Our Businesses", href: "/#businesses" },
-  { label: "Foundation", href: "/foundation" },
+  { label: "Foundation",     href: "/foundation" },
   { label: "Sustainability", href: "/#sustainability" },
-  { label: "Investors", href: "/#investors" },
-  { label: "Media", href: "/#media" },
-  { label: "Careers", href: "/#careers" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Investors",      href: "/investors" },
+  { label: "Media",          href: "/#media" },
+  { label: "Careers",        href: "/careers" },
+  { label: "Contact",        href: "/#contact" },
 ];
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled]     = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
 
@@ -25,6 +25,11 @@ const Header = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
@@ -38,6 +43,11 @@ const Header = () => {
     }
   };
 
+  // A nav item is a <Link> when it's a proper path (e.g. /leadership)
+  // and a plain <a> when it's a hash anchor (e.g. /#about)
+  const isPageLink = (href: string) =>
+    href.startsWith("/") && !href.startsWith("/#");
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -46,10 +56,11 @@ const Header = () => {
           : "bg-navy/80 backdrop-blur-md py-3 md:py-4"
       }`}
     >
+      {/* Gold accent line */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
-        {/* Text-only wordmark */}
+        {/* Wordmark */}
         <Link to="/" className="flex flex-col group">
           <span
             className={`text-primary-foreground font-serif font-bold tracking-[0.18em] leading-none transition-all duration-300 ${
@@ -63,10 +74,10 @@ const Header = () => {
           </span>
         </Link>
 
-        {/* Desktop Nav */}
+        {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-0.5">
           {navItems.map((item) =>
-            item.href.startsWith("/") && !item.href.startsWith("/#") ? (
+            isPageLink(item.href) ? (
               <Link
                 key={item.label}
                 to={item.href}
@@ -94,21 +105,22 @@ const Header = () => {
           )}
         </nav>
 
-        {/* Mobile Toggle */}
+        {/* Mobile toggle */}
         <button
           className="lg:hidden text-primary-foreground p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile nav */}
       {mobileOpen && (
         <nav className="lg:hidden bg-navy border-t border-gold/10 px-4 py-3 space-y-0.5">
           {navItems.map((item) =>
-            item.href.startsWith("/") && !item.href.startsWith("/#") ? (
+            isPageLink(item.href) ? (
               <Link
                 key={item.label}
                 to={item.href}
