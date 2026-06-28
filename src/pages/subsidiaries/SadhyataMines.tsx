@@ -1,8 +1,15 @@
 import SubsidiaryPageLayout from "@/components/SubsidiaryPageLayout";
+import SEO from "@/components/SEO";
 import { Mountain } from "lucide-react";
 
 const SadhyataMines = () => (
-  <SubsidiaryPageLayout
+  <>
+    <SEO
+      title="Sadhyata Mines Private Limited | SADHYATA Group"
+      description="Sadhyata Mines Private Limited is SADHYATA Group's mining arm — sand, stone, and coal operations plus long-term mineral asset development across India."
+      path="/businesses/mines"
+    />
+    <SubsidiaryPageLayout
     icon={Mountain}
     name="Sadhyata Mines Private Limited"
     tagline="Responsible Extraction. Strategic Resource Leadership."
@@ -29,7 +36,8 @@ const SadhyataMines = () => (
     ]}
     vision="To become a structured, compliant, and globally active mining enterprise securing long-term mineral resources for India's industrial growth."
     mission="To responsibly acquire, develop, and manage mineral assets through disciplined extraction practices, regulatory adherence, and vertically integrated supply chain systems that deliver sustainable value."
-  />
+    />
+  </>
 );
 
 export default SadhyataMines;

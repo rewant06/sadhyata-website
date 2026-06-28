@@ -1,8 +1,15 @@
 import SubsidiaryPageLayout from "@/components/SubsidiaryPageLayout";
+import SEO from "@/components/SEO";
 import { Landmark } from "lucide-react";
 
 const SadhyataCapital = () => (
-  <SubsidiaryPageLayout
+  <>
+    <SEO
+      title="Sadhyata Capital Private Limited | SADHYATA Group"
+      description="Sadhyata Capital Private Limited is SADHYATA Group's financial services platform, structuring capital allocation and project finance on its path to becoming a regulated NBFC."
+      path="/businesses/capital"
+    />
+    <SubsidiaryPageLayout
     icon={Landmark}
     name="Sadhyata Capital Private Limited"
     tagline="Structured Finance. Institutional Discipline."
@@ -17,7 +24,8 @@ const SadhyataCapital = () => (
     ]}
     verticalsSectionTitle="Business Framework"
     vision="To build a trusted financial institution anchored in transparency, prudence, and scalable credit delivery."
-  />
+    />
+  </>
 );
 
 export default SadhyataCapital;

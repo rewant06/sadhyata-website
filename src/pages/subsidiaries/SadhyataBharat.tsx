@@ -1,8 +1,15 @@
 import SubsidiaryPageLayout from "@/components/SubsidiaryPageLayout";
+import SEO from "@/components/SEO";
 import { Factory } from "lucide-react";
 
 const SadhyataBharat = () => (
-  <SubsidiaryPageLayout
+  <>
+    <SEO
+      title="Sadhyata Bharat Limited | SADHYATA Group"
+      description="Sadhyata Bharat Limited is SADHYATA Group's industrial manufacturing arm — sponge iron, TMT bars, cement, and industrial components powering India's Atmanirbhar Bharat mission."
+      path="/businesses/bharat"
+    />
+    <SubsidiaryPageLayout
     icon={Factory}
     name="Sadhyata Bharat Limited"
     tagline="Industrial Strength for a Self-Reliant Nation"
@@ -25,7 +32,8 @@ const SadhyataBharat = () => (
       "Compliance with environmental and industrial standards",
     ]}
     vision="To emerge as a nationally significant industrial manufacturing enterprise delivering scale, strength, and sovereignty."
-  />
+    />
+  </>
 );
 
 export default SadhyataBharat;

@@ -10,7 +10,10 @@ const navItems = [
   { label: "Foundation",     href: "/foundation" },
   { label: "Sustainability", href: "/#sustainability" },
   { label: "Investors",      href: "/investors" },
-  { label: "Media",          href: "/#media" },
+  // "Media" disabled: no /#media section exists on the page yet.
+  // Re-enable once the Media/Press section is built (see open question
+  // with client) — just uncomment the line below.
+  // { label: "Media",        href: "/#media" },
   { label: "Careers",        href: "/careers" },
   { label: "Contact",        href: "/#contact" },
 ];
@@ -30,23 +33,6 @@ const Header = () => {
   useEffect(() => {
     setMobileOpen(false);
   }, [location.pathname]);
-
-  const handleNavClick = (href: string) => {
-    setMobileOpen(false);
-    if (href.startsWith("/#")) {
-      const id = href.slice(2);
-      if (location.pathname === "/") {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-      } else {
-        window.location.href = href;
-      }
-    }
-  };
-
-  // A nav item is a <Link> when it's a proper path (e.g. /leadership)
-  // and a plain <a> when it's a hash anchor (e.g. /#about)
-  const isPageLink = (href: string) =>
-    href.startsWith("/") && !href.startsWith("/#");
 
   return (
     <header
@@ -76,33 +62,16 @@ const Header = () => {
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-0.5">
-          {navItems.map((item) =>
-            isPageLink(item.href) ? (
-              <Link
-                key={item.label}
-                to={item.href}
-                className="relative text-primary-foreground/70 hover:text-primary-foreground text-[13px] px-3 py-2 tracking-wide transition-colors group"
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-              </Link>
-            ) : (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={(e) => {
-                  if (item.href.startsWith("/#") && location.pathname === "/") {
-                    e.preventDefault();
-                    handleNavClick(item.href);
-                  }
-                }}
-                className="relative text-primary-foreground/70 hover:text-primary-foreground text-[13px] px-3 py-2 tracking-wide transition-colors group"
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-              </a>
-            )
-          )}
+          {navItems.map((item) => (
+            <Link
+              key={item.label}
+              to={item.href}
+              className="relative text-primary-foreground/70 hover:text-primary-foreground text-[13px] px-3 py-2 tracking-wide transition-colors group"
+            >
+              {item.label}
+              <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+            </Link>
+          ))}
         </nav>
 
         {/* Mobile toggle */}
@@ -119,33 +88,16 @@ const Header = () => {
       {/* Mobile nav */}
       {mobileOpen && (
         <nav className="lg:hidden bg-navy border-t border-gold/10 px-4 py-3 space-y-0.5">
-          {navItems.map((item) =>
-            isPageLink(item.href) ? (
-              <Link
-                key={item.label}
-                to={item.href}
-                onClick={() => setMobileOpen(false)}
-                className="block text-primary-foreground/70 hover:text-gold active:text-gold text-sm py-2.5 px-2 tracking-wide transition-colors border-l-2 border-transparent hover:border-gold"
-              >
-                {item.label}
-              </Link>
-            ) : (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={(e) => {
-                  if (item.href.startsWith("/#") && location.pathname === "/") {
-                    e.preventDefault();
-                    handleNavClick(item.href);
-                  }
-                  setMobileOpen(false);
-                }}
-                className="block text-primary-foreground/70 hover:text-gold active:text-gold text-sm py-2.5 px-2 tracking-wide transition-colors border-l-2 border-transparent hover:border-gold"
-              >
-                {item.label}
-              </a>
-            )
-          )}
+          {navItems.map((item) => (
+            <Link
+              key={item.label}
+              to={item.href}
+              onClick={() => setMobileOpen(false)}
+              className="block text-primary-foreground/70 hover:text-gold active:text-gold text-sm py-2.5 px-2 tracking-wide transition-colors border-l-2 border-transparent hover:border-gold"
+            >
+              {item.label}
+            </Link>
+          ))}
         </nav>
       )}
     </header>

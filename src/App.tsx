@@ -7,6 +7,7 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Foundation from "./pages/Foundation";
+import ScrollToHash from "./components/ScrollToHash";
 
 // --- Subsidiary pages (lazy-loaded for performance) ---
 const SadhyataInfra       = lazy(() => import("./pages/subsidiaries/SadhyataInfra"));
@@ -70,6 +71,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToHash />
         <Suspense fallback={<Loading />}>
           <Routes>
             {/* Core pages */}

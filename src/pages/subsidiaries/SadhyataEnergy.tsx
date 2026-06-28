@@ -1,8 +1,15 @@
 import SubsidiaryPageLayout from "@/components/SubsidiaryPageLayout";
+import SEO from "@/components/SEO";
 import { Zap } from "lucide-react";
 
 const SadhyataEnergy = () => (
-  <SubsidiaryPageLayout
+  <>
+    <SEO
+      title="Sadhyata Energy Limited | SADHYATA Group"
+      description="Sadhyata Energy Limited builds SADHYATA Group's energy portfolio — biodiesel, Bio-CNG, thermal power, solar, and EV charging infrastructure across India."
+      path="/businesses/energy"
+    />
+    <SubsidiaryPageLayout
     icon={Zap}
     name="Sadhyata Energy Limited"
     tagline="Powering India's Integrated Energy Future"
@@ -26,7 +33,8 @@ const SadhyataEnergy = () => (
       "Environmental compliance and carbon-conscious execution",
     ]}
     vision="To become a diversified energy enterprise delivering secure, sustainable, and scalable power solutions for India's industrial future."
-  />
+    />
+  </>
 );
 
 export default SadhyataEnergy;

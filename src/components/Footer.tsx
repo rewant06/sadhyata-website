@@ -31,29 +31,19 @@ const Footer = () => {
               Quick Links
             </h4>
             {[
-              { label: "About",          href: "/#about",      isPage: false },
-              { label: "Leadership",     href: "/leadership",  isPage: true  },
-              { label: "Our Businesses", href: "/#businesses", isPage: false },
-              { label: "Foundation",     href: "/foundation",  isPage: true  },
-            ].map((l) =>
-              l.isPage ? (
-                <Link
-                  key={l.label}
-                  to={l.href}
-                  className="block text-primary-foreground/50 hover:text-gold text-xs py-1 transition-colors sm:text-sm"
-                >
-                  {l.label}
-                </Link>
-              ) : (
-                <a
-                  key={l.label}
-                  href={l.href}
-                  className="block text-primary-foreground/50 hover:text-gold text-xs py-1 transition-colors sm:text-sm"
-                >
-                  {l.label}
-                </a>
-              )
-            )}
+              { label: "About",          href: "/#about" },
+              { label: "Leadership",     href: "/leadership" },
+              { label: "Our Businesses", href: "/#businesses" },
+              { label: "Foundation",     href: "/foundation" },
+            ].map((l) => (
+              <Link
+                key={l.label}
+                to={l.href}
+                className="block text-primary-foreground/50 hover:text-gold text-xs py-1 transition-colors sm:text-sm"
+              >
+                {l.label}
+              </Link>
+            ))}
           </div>
 
           {/* Resources */}
@@ -62,31 +52,21 @@ const Footer = () => {
               Resources
             </h4>
             {[
-              { label: "Sustainability", href: "/#sustainability", isPage: false },
-              { label: "Investors",      href: "/investors",       isPage: true  },
-              { label: "Careers",        href: "/careers",         isPage: true  },
-            ].map((l) =>
-              l.isPage ? (
-                <Link
-                  key={l.label}
-                  to={l.href}
-                  className="block text-primary-foreground/50 hover:text-gold text-xs py-1 transition-colors sm:text-sm"
-                >
-                  {l.label}
-                </Link>
-              ) : (
-                <a
-                  key={l.label}
-                  href={l.href}
-                  className="block text-primary-foreground/50 hover:text-gold text-xs py-1 transition-colors sm:text-sm"
-                >
-                  {l.label}
-                </a>
-              )
-            )}
+              { label: "Sustainability", href: "/#sustainability" },
+              { label: "Investors",      href: "/investors" },
+              { label: "Careers",        href: "/careers" },
+            ].map((l) => (
+              <Link
+                key={l.label}
+                to={l.href}
+                className="block text-primary-foreground/50 hover:text-gold text-xs py-1 transition-colors sm:text-sm"
+              >
+                {l.label}
+              </Link>
+            ))}
           </div>
 
-          {/* Contact — email encoded to reduce spam harvesting */}
+          {/* Contact */}
           <div>
             <h4 className="font-serif font-semibold text-primary-foreground text-sm mb-3 md:mb-4">
               Contact
