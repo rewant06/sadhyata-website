@@ -1,8 +1,15 @@
 import SubsidiaryPageLayout from "@/components/SubsidiaryPageLayout";
+import SEO from "@/components/SEO";
 import { Wheat } from "lucide-react";
 
 const SadhyataAgrotech = () => (
-  <SubsidiaryPageLayout
+  <>
+    <SEO
+      title="Sadhyata Agrotech Limited | SADHYATA Group"
+      description="Sadhyata Agrotech Limited is SADHYATA Group's agri-business arm — dairy, agro-processing, packaged foods, and spice exports connecting India's farms to global markets."
+      path="/businesses/agrotech"
+    />
+    <SubsidiaryPageLayout
     icon={Wheat}
     name="Sadhyata Agrotech Limited"
     tagline="From Farms to Global Markets"
@@ -16,7 +23,8 @@ const SadhyataAgrotech = () => (
     ]}
     verticalsSectionTitle="Business Segments"
     vision="To become a leading agri-business enterprise connecting India's farms to the world."
-  />
+    />
+  </>
 );
 
 export default SadhyataAgrotech;

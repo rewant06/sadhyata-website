@@ -1,8 +1,15 @@
 import SubsidiaryPageLayout from "@/components/SubsidiaryPageLayout";
+import SEO from "@/components/SEO";
 import { Shirt } from "lucide-react";
 
 const SadhyataFashion = () => (
-  <SubsidiaryPageLayout
+  <>
+    <SEO
+      title="Sadhyata Fashion Limited | SADHYATA Group"
+      description="Sadhyata Fashion Limited is SADHYATA Group's apparel arm — ethnic and contemporary fashion brands blending artisan craftsmanship with modern retail across India."
+      path="/businesses/fashion"
+    />
+    <SubsidiaryPageLayout
     icon={Shirt}
     name="Sadhyata Fashion Limited"
     tagline="Where Tradition Meets Contemporary Retail"
@@ -16,7 +23,8 @@ const SadhyataFashion = () => (
     ]}
     verticalsSectionTitle="Fashion Ecosystem"
     vision="To become a nationally recognized apparel brand combining tradition, affordability, and scale."
-  />
+    />
+  </>
 );
 
 export default SadhyataFashion;

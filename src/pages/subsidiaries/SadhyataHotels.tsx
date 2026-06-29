@@ -1,8 +1,15 @@
 import SubsidiaryPageLayout from "@/components/SubsidiaryPageLayout";
+import SEO from "@/components/SEO";
 import { Hotel } from "lucide-react";
 
 const SadhyataHotels = () => (
-  <SubsidiaryPageLayout
+  <>
+    <SEO
+      title="Sadhyata Hotels Limited | SADHYATA Group"
+      description="Sadhyata Hotels Limited is SADHYATA Group's hospitality arm — premium urban hotels and nightlife venues across India, with an international expansion roadmap."
+      path="/businesses/hotels"
+    />
+    <SubsidiaryPageLayout
     icon={Hotel}
     name="Sadhyata Hotels Limited"
     tagline="Premium Hospitality with Global Aspirations"
@@ -17,7 +24,8 @@ const SadhyataHotels = () => (
     ]}
     verticalsSectionTitle="Business Segments"
     vision="To establish a nationally respected and internationally recognized hospitality brand."
-  />
+    />
+  </>
 );
 
 export default SadhyataHotels;

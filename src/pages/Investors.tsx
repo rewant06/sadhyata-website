@@ -3,6 +3,7 @@ import { ExternalLink, Mail, Phone, MapPin, FileText } from "lucide-react";
 import type { ElementType } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -84,6 +85,11 @@ const DetailRow = ({
 const Investors = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Investor Centre | SADHYATA Group"
+        description="SADHYATA Group Investor Centre — registrar & transfer agent, debenture trustee details, demat/listing information, and investor relations contact."
+        path="/investors"
+      />
       <Header />
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}

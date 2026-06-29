@@ -1,8 +1,15 @@
 import SubsidiaryPageLayout from "@/components/SubsidiaryPageLayout";
+import SEO from "@/components/SEO";
 import { Monitor } from "lucide-react";
 
 const SadhyataConsultancy = () => (
-  <SubsidiaryPageLayout
+  <>
+    <SEO
+      title="Sadhyata Consultancy Limited | SADHYATA Group"
+      description="Sadhyata Consultancy Limited is SADHYATA Group's technology arm — enterprise software, ERP/CRM platforms, cloud hosting, and AI integration for the Group and enterprise clients."
+      path="/businesses/consultancy"
+    />
+    <SubsidiaryPageLayout
     icon={Monitor}
     name="Sadhyata Consultancy Limited"
     tagline="Digital Backbone of the Group"
@@ -16,7 +23,8 @@ const SadhyataConsultancy = () => (
     ]}
     verticalsSectionTitle="Technology Services"
     vision="To become a sovereign technology and cloud infrastructure provider for Indian enterprises."
-  />
+    />
+  </>
 );
 
 export default SadhyataConsultancy;

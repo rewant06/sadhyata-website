@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 // Portrait assets — processed by Vite, content-hashed at build
 import chairmanImg from "@/assets/chairman-portrait.jpeg";
@@ -69,6 +70,11 @@ const fadeUp = {
 const Leadership = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Leadership | SADHYATA Group"
+        description="Meet the leadership of SADHYATA Group — Founder & Chairman Shri Karnjeet Kumar Singh and the key managerial team driving governance and growth across all subsidiaries."
+        path="/leadership"
+      />
       <Header />
 
       {/* ── Hero ──────────────────────────────────────────────────────────── */}

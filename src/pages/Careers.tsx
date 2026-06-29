@@ -5,6 +5,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -65,6 +66,11 @@ const fadeUp = {
 const Careers = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Careers | SADHYATA Group"
+        description="Explore careers at SADHYATA Group — open roles across infrastructure, finance, technology, mining, agri-business, and hospitality in a fast-growing Indian conglomerate."
+        path="/careers"
+      />
       <Header />
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}
