@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+// NOTE: if your logo file in src/assets/ has a different name, update the path below.
+import sadhyataLogo from "../assets/sadhyata-logo.jpeg";
 
 const navItems = [
   { label: "Home",           href: "/#home" },
@@ -46,18 +48,20 @@ const Header = () => {
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
-        {/* Wordmark */}
-        <Link to="/" className="flex flex-col group">
-          <span
-            className={`text-primary-foreground font-serif font-bold tracking-[0.18em] leading-none transition-all duration-300 ${
-              scrolled ? "text-lg md:text-xl" : "text-xl md:text-2xl"
+        {/* Logo — src/assets/ import, Vite hashes the filename at build time */}
+        <Link to="/" className="flex items-center">
+          <img
+            src={sadhyataLogo}
+            alt="SADHYATA Group"
+            /*
+             * The logo is a 1024×1024 square; the wordmark occupies y:40–60%.
+             * aspect-[4/1] + object-cover + object-center mathematically shows
+             * y:37.5–62.5% of the source — the wordmark, no white padding.
+             */
+            className={`object-cover object-center aspect-[4/1] transition-all duration-300 ${
+              scrolled ? "h-8 md:h-9" : "h-9 md:h-11"
             }`}
-          >
-            SADHYATA
-          </span>
-          <span className="text-gold text-[8px] md:text-[10px] tracking-[0.4em] uppercase leading-tight mt-0.5 font-medium">
-            Group
-          </span>
+          />
         </Link>
 
         {/* Desktop nav */}

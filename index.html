@@ -11,23 +11,108 @@
     />
     <meta name="author" content="SADHYATA Group" />
 
-    <!-- Canonical (your real domain) -->
+    <!-- Canonical -->
     <link rel="canonical" href="https://sadhyata.com/" />
 
-    <!-- Favicon (use Vite default icon for now) -->
-    <link rel="icon" type="image/svg+xml" href="/vite.svg?v=1" />
+    <!-- Favicon — tight-crop wordmark PNG (512×159 source, browser scales to 16/32/64) -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <!-- Apple home-screen icon -->
+    <link rel="apple-touch-icon" href="/favicon.png" />
 
-    <!-- Open Graph (no og:image until you have a real one) -->
-    <meta property="og:url" content="https://sadhyata.com/" />
-    <meta property="og:title" content="SADHYATA Group | Building India's Future" />
+    <!-- Open Graph -->
+    <meta property="og:url"         content="https://sadhyata.com/" />
+    <meta property="og:title"       content="SADHYATA Group | Building India's Future" />
     <meta
       property="og:description"
       content="A purpose-driven Indian conglomerate anchored by strong governance and a nation-first vision."
     />
-    <meta property="og:type" content="website" />
+    <meta property="og:type"        content="website" />
+    <meta property="og:image"       content="https://sadhyata.com/sadhyata-logo.png" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="og:image:alt"   content="SADHYATA Group logo" />
 
-    <!-- Twitter/X card (no image until you have a real one) -->
-    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Twitter / X card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:image"       content="https://sadhyata.com/sadhyata-logo.png" />
+
+    <!--
+      Organization structured data (schema.org / JSON-LD).
+      Static in <head> — visible to non-JS crawlers on first byte.
+
+      Verified against MCA registries (Falcon Ebiz, TrustProspect, Tofler,
+      Tracxn, TheCompanyCheck, ZaubaCorp) as of June 2025.
+
+      FUTURE ISSUE — address omitted (conflict between Golmuri, East
+      Singhbhum 831003 vs. 301 Ranchi Court 834001); add once confirmed
+      against the actual Certificate of Incorporation/MCA filing.
+
+      Diksha Kumari (registered MCA director) intentionally omitted from
+      "member" — confirm with client whether to surface on Leadership page.
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SADHYATA Group",
+        "legalName": "Sadhyata Private Limited",
+        "url": "https://sadhyata.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://sadhyata.com/sadhyata-logo.png",
+          "width": 1024,
+          "height": 1024
+        },
+        "image": "https://sadhyata.com/sadhyata-logo.png",
+        "description": "SADHYATA Group is a purpose-driven Indian conglomerate operating across infrastructure, energy, finance, technology, and social development.",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "CIN",
+          "value": "U43299JH2023PTC020098"
+        },
+        "foundingDate": "2023-03-17",
+        "founder": {
+          "@type": "Person",
+          "name": "Karnjeet Kumar Singh",
+          "jobTitle": "Founder & Group Executive Chairman"
+        },
+        "member": [
+          {
+            "@type": "Person",
+            "name": "Ankesh Raj",
+            "jobTitle": "Group Executive Director, Management"
+          },
+          {
+            "@type": "Person",
+            "name": "Kajal Chetri",
+            "jobTitle": "Group Executive Director, Human Resource"
+          },
+          {
+            "@type": "Person",
+            "name": "Sandeep Singh Tiwari",
+            "jobTitle": "General Counsel"
+          }
+        ],
+        "areaServed": {
+          "@type": "Country",
+          "name": "India"
+        },
+        "knowsAbout": [
+          "Infrastructure Development",
+          "Mining",
+          "Energy and Power",
+          "Manufacturing",
+          "Agriculture and Agro-processing",
+          "Retail and Brands",
+          "Hospitality",
+          "Technology Consultancy",
+          "Financial Services",
+          "Investment Management",
+          "Stock Broking",
+          "Fashion Retail"
+        ]
+      }
+    </script>
   </head>
 
   <body>

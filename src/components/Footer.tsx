@@ -96,7 +96,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/10 pt-4 flex flex-col gap-3 items-center text-center md:flex-row md:justify-between md:pt-6 md:gap-4">
           <p className="text-primary-foreground/30 text-[11px] sm:text-xs">
-            © {new Date().getFullYear()} SADHYATA Private Limited. All rights
+            © {new Date().getFullYear()} SADHYATA Private Limited. CIN: U43299JH2023PTC020098. All rights
             reserved.
           </p>
           <p className="text-primary-foreground/30 text-[11px] sm:text-xs">

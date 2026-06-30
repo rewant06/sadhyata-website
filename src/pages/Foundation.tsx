@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Heart, Trees, UtensilsCrossed, GraduationCap, Landmark, FileText } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -71,6 +72,11 @@ const registrations = [
 const Foundation = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Sadhyata Foundation | SADHYATA Group"
+        description="Sadhyata Foundation is SADHYATA Group's social impact arm — temple restoration, tree plantation, food distribution, and Gurukul-inspired education across India."
+        path="/foundation"
+      />
       <Header />
 
       {/* ── Hero ──────────────────────────────────────────────────────── */}
